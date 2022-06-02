@@ -38,7 +38,8 @@
     "changelog": "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s",
     "tsc": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "prepublish": "npm run tsc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "echo 'Add testing!' && exit 1"
   },
   "files": [
     "dist/"

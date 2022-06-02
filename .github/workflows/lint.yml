@@ -1,9 +1,6 @@
 name: Lint
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
 
 jobs:
@@ -13,15 +10,20 @@ jobs:
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 16
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
+      # lint commit messages
+      - uses: wagoid/commitlint-github-action@v4
+        env:
+          NODE_PATH: ${{ github.workspace }}/node_modules
 
       - name: Run linters
         uses: wearerequired/lint-action@v2

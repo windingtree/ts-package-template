@@ -27,5 +27,8 @@ Select the appropriate type of commit message, any issues to close, and note any
 
 **Note**: This will enforce _conventional commit messages_ and _GPG signatures_ on commits.
 
+**Note**: `commitlint` is enabled within the repository so all commits that do not abide by `conventional commits` will be rejected, as `semver` relies on this.
+
 ## Deployment
 
+Automatically publishes according to `semver`. Publishes to `npmjs` when a `PR` is pushed into the `main` branch.
