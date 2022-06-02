@@ -1,0 +1,28 @@
+# dotenv
+.env
+.env.*
+!.env.example
+
+# misc / ide
+.DS_Store
+*.swp
+*.db
+*.log
+.idea
+
+# temp files
+temp
+cache
+
+# node
+node_modules
+package-lock.json
+coverage
+coverage.json
+
+# any generated protobufs
+src/proto/*.ts
+
+# preempt any keys
+*.keys
+*.key
